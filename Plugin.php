@@ -1,5 +1,6 @@
 <?php namespace LaminSanneh\FlexiExcelExporter;
 
+use Backend\Facades\Backend;
 use System\Classes\PluginBase;
 
 /**
@@ -23,4 +24,26 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerNavigation()
+    {
+        return [
+            'flexiexcelexporter' => [
+                'label'       => 'Flexi Excel Exporter',
+                'url'         => Backend::url('laminsanneh/flexiexcelexporter/exporters'),
+                'icon'        => 'icon-bullhorn',
+                'permissions' => ['laminsanneh.flexiexcelexporter.*'],
+                'order'       => 500,
+
+                'sideMenu' => [
+                    'faqgroups' => [
+                        'label'       => 'Flexi Excel Exporter',
+                        'url'         => Backend::url('laminsanneh/flexiexcelexporter/exporters'),
+                        'icon'        => 'icon-pencil',
+                        'permissions' => ['laminsanneh.flexiexcelexporter.*'],
+                    ]
+                ]
+
+            ]
+        ];
+    }
 }

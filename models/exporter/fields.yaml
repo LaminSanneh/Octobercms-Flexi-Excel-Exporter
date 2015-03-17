@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+    title:
+        label: Title
+        type: text
+    columns:
+        label: Columns
+        type: checkboxlist
+    model:
+        type: text
+        label: Selected Model
+

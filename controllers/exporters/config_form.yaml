@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Exporter
+
+# Model Form Field configuration
+form: $/laminsanneh/flexiexcelexporter/models/exporter/fields.yaml
+
+# Model Class name
+modelClass: LaminSanneh\FlexiExcelExporter\Models\Exporter
+
+# Default redirect location
+defaultRedirect: laminsanneh/flexiexcelexporter/exporters
+
+# Create page
+create:
+    title: Create Exporter
+    redirect: laminsanneh/flexiexcelexporter/exporters/update/:id
+    redirectClose: laminsanneh/flexiexcelexporter/exporters
+
+# Update page
+update:
+    title: Edit Exporter
+    redirect: laminsanneh/flexiexcelexporter/exporters
+    redirectClose: laminsanneh/flexiexcelexporter/exporters
+
+# Preview page
+preview:
+    title: Preview Exporter
