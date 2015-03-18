@@ -13,6 +13,7 @@ fields:
     columns:
         label: Columns
         type: checkboxlist
+        comment: Select the list of columns to export in the excel exported file
     model:
         type: text
         label: Selected Model
