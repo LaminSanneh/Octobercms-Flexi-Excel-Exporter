@@ -1,5 +1,6 @@
 <?php namespace LaminSanneh\FlexiExcelExporter\Models;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Validator;
 use Model;
 
@@ -52,10 +53,22 @@ class Exporter extends Model
 
     public function getColumnsOptions() {
 
-        return [
-          'name' => 'Name',
-          'age' => 'Age'
-        ];
+        $class = $this->model;
+        if (!class_exists($class)){
+            return [];
+        }
+        $table = (new $class())->getTable();
+        $columns = array_filter(Schema::getColumnListing($table), function($column){
+            return $column != 'created_at' && $column != 'updated_at';
+        });
+
+        $preparedColumns = [];
+
+        foreach($columns as $column){
+            $preparedColumns[$column] = $column;
+        }
+
+        return $preparedColumns;
     }
 
 }

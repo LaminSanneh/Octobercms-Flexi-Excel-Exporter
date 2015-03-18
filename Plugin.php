@@ -1,6 +1,8 @@
 <?php namespace LaminSanneh\FlexiExcelExporter;
 
 use Backend\Facades\Backend;
+use Illuminate\Foundation\AliasLoader;
+use Illuminate\Support\Facades\App;
 use System\Classes\PluginBase;
 
 /**
@@ -45,5 +47,15 @@ class Plugin extends PluginBase
 
             ]
         ];
+    }
+
+    public function boot() {
+
+        // Service provider
+        App::register('\Maatwebsite\Excel\ExcelServiceProvider');
+
+        // Register alias
+        $alias = AliasLoader::getInstance();
+        $alias->alias('Excel', '\Maatwebsite\Excel\Facades\Excel');
     }
 }

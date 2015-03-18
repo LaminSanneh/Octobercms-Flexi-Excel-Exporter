@@ -42,8 +42,10 @@
                 </button>
                 <button
                     type="button"
+                    id="onExportButton"
                     class="btn btn-success"
                     data-request="onExport"
+                    data-request-success="downloadSuccessful(data)"
                     data-load-indicator="Exporting Excel...">
                     Export Excel
                 </button>
@@ -61,3 +63,16 @@
     <p><a href="<?= Backend::url('laminsanneh/flexiexcelexporter/exporters') ?>" class="btn btn-default">Return to exporters list</a></p>
 
 <?php endif ?>
+<script src="<?php echo Config::get('cms.pluginsPath').'/laminsanneh/flexiexcelexporter/assets/js/jquery.fileDownload.js'; ?>" ></script>
+<script>
+//    $(function(){
+        $('form').on('onExportButton', function(){
+            console.log('Finished!');
+        });
+
+        function downloadSuccessful(data){
+            console.log(data);
+            $.fileDownload(data.downloadurl);
+        }
+//    });
+</script>
