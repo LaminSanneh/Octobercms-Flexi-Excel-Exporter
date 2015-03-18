@@ -1,0 +1,12 @@
+{
+    "name": "laminsanneh/flexiexcelexporter",
+    "require": {
+        "maatwebsite/excel": "~2.0"
+    },
+    "authors": [
+        {
+            "name": "Lamin Sanneh",
+            "email": "lamin.evra@gmail.com"
+        }
+    ]
+}
